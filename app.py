@@ -38,7 +38,7 @@ def main():
     X_future_scaled = scaler.transform(X_future)  # Pastikan untuk menggunakan scaler yang sama yang digunakan untuk training
     y_pred_future = model.predict(X_future_scaled)
     
-    st.write(filtered_df.head())
+    st.write("Predicted Sale Price in", future_year, ":", y_pred_future)
 
     # Fill missing values
     bsmt_num_cols = ['BsmtFin SF 1', 'BsmtFin SF 2', 'Bsmt Unf SF','Total Bsmt SF' ,'Bsmt Full Bath', 'Bsmt Half Bath']
