@@ -11,10 +11,6 @@ df = pd.read_csv('data/CarPrice_Assignment.csv')
 
 # Preprocess data
 df = preprocess_data(df)
-df = df.fillna(df.mean())
-
-df = pd.get_dummies(df, drop_first=True)
-
 
 # Split data
 X = df.drop('price', axis=1)
