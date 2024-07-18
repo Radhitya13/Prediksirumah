@@ -7,7 +7,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 
 # Load dataset
-df = pd.read_csv('data/car_prices.csv')
+df = pd.read_csv('data/CarPrice_Assignmnet.csv')
 
 # Preprocess data
 df = preprocess_data(df)
