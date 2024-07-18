@@ -134,5 +134,5 @@ def main():
     st.write("ElasticNet Model Coefficients:")
     st.write(elastic_model.coef_)
 
-if __name__ == '__main__':
+    if __name__ == '__main__':
     main()
