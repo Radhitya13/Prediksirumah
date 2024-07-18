@@ -29,28 +29,12 @@ def main():
     st.header("Dataset Overview")
     st.write(df.head())
     
-    if st.checkbox("Show correlation with SalePrice"):
-        st.write(df.corr()['SalePrice'].sort_values())
+  selected_year = st.selectbox("Select a year", df['YearBuilt'].unique())
+
+filtered_df = df[df['YearBuilt'] == selected_year]
     
-    if st.checkbox("Show scatter plot of Overall Quality vs SalePrice"):
-        plt.figure(figsize=(10, 6))
-        sns.scatterplot(data=df, x='Overall Qual', y='SalePrice', color='g')
-        plt.axhline(y=200000, color='c')
-        st.pyplot(plt)
-    
-    st.header("Data Cleaning and Feature Engineering")
-    if st.checkbox("Remove outliers"):
-        index_drop = df[(df['Gr Liv Area'] > 4000) & (df['SalePrice'] < 400000)].index
-        df = df.drop(index_drop, axis=0)
-        st.write("Outliers removed.")
-    
-    if st.checkbox("Show scatter plot after outlier removal"):
-        plt.figure(figsize=(10, 6))
-        sns.scatterplot(x='Gr Liv Area', y='SalePrice', data=df, color='g')
-        plt.axhline(y=200000, color='c')
-        plt.axvline(x=4000, color='c')
-        st.pyplot(plt)
-    
+        st.write(filtered_df.head())
+
     # Fill missing values
     bsmt_num_cols = ['BsmtFin SF 1', 'BsmtFin SF 2', 'Bsmt Unf SF','Total Bsmt SF' ,'Bsmt Full Bath', 'Bsmt Half Bath']
     df[bsmt_num_cols] = df[bsmt_num_cols].fillna(0)
