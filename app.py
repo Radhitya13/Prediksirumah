@@ -26,6 +26,8 @@ def main():
     st.title("Ames Housing Price Prediction")
 
     scaler = StandardScaler()
+
+    scaler.fit(X_train)
     
     df = load_data()
     
