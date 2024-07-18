@@ -31,7 +31,7 @@ def main():
     
     future_year = st.slider("Select a future year", min_value=df['Year Built'].min(), max_value=df['Year Built'].max() + 10)
 
-    filtered_df = df[df['Year Built'] == selected_year]
+    filtered_df = df[df['Year Built'] == future_year]
     
     st.write(filtered_df.head())
 
