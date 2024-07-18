@@ -29,20 +29,20 @@ def main():
     st.header("Dataset Overview")
     st.write(df.head())
     
-selected_year = st.selectbox("Select a year", df['YearBuilt'].unique())
+    selected_year = st.selectbox("Select a year", df['YearBuilt'].unique())
 
-filtered_df = df[df['YearBuilt'] == selected_year]
+    filtered_df = df[df['YearBuilt'] == selected_year]
     
-st.write(filtered_df.head())
+    st.write(filtered_df.head())
 
     # Fill missing values
-bsmt_num_cols = ['BsmtFin SF 1', 'BsmtFin SF 2', 'Bsmt Unf SF','Total Bsmt SF' ,'Bsmt Full Bath', 'Bsmt Half Bath']
-df[bsmt_num_cols] = df[bsmt_num_cols].fillna(0)
-bsmt_str_cols = ['Bsmt Qual', 'Bsmt Cond', 'Bsmt Exposure', 'BsmtFin Type 1', 'BsmtFin Type 2']
-df[bsmt_str_cols] = df[bsmt_str_cols].fillna('None')
-df['Mas Vnr Type'] = df['Mas Vnr Type'].fillna('None')
-df['Mas Vnr Area'] = df['Mas Vnr Area'].fillna(0)
-Gar_str_cols = ['Garage Type', 'Garage Finish', 'Garage Qual', 'Garage Cond']
+    bsmt_num_cols = ['BsmtFin SF 1', 'BsmtFin SF 2', 'Bsmt Unf SF','Total Bsmt SF' ,'Bsmt Full Bath', 'Bsmt Half Bath']
+    df[bsmt_num_cols] = df[bsmt_num_cols].fillna(0)
+    bsmt_str_cols = ['Bsmt Qual', 'Bsmt Cond', 'Bsmt Exposure', 'BsmtFin Type 1', 'BsmtFin Type 2']
+    df[bsmt_str_cols] = df[bsmt_str_cols].fillna('None')
+    df['Mas Vnr Type'] = df['Mas Vnr Type'].fillna('None')
+    df['Mas Vnr Area'] = df['Mas Vnr Area'].fillna(0)
+    Gar_str_cols = ['Garage Type', 'Garage Finish', 'Garage Qual', 'Garage Cond']
     df[Gar_str_cols] = df[Gar_str_cols].fillna('None')
     df['Garage Yr Blt'] = df['Garage Yr Blt'].fillna(0)
     df['Fireplace Qu'] = df['Fireplace Qu'].fillna('None')
