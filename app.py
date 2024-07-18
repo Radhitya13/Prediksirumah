@@ -29,7 +29,7 @@ def main():
     st.header("Dataset Overview")
     st.write(df.head())
     
-    selected_year = st.slider("Select a year", min_value=df['Year Built'].min(), max_value=df['Year Built'].max())
+    future_year = st.slider("Select a future year", min_value=df['Year Built'].min(), max_value=df['Year Built'].max() + 10)
 
     filtered_df = df[df['Year Built'] == selected_year]
     
