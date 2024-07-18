@@ -35,7 +35,7 @@ def main():
 
     X_future = future_data.drop(['SalePrice'], axis=1)
 
-    X_future_scaled = scaler.transform(X_future)  # Pastikan untuk menggunakan scaler yang sama yang digunakan untuk training
+    X_future_scaled = scaler.transform(X_future)  
     y_pred_future = model.predict(X_future_scaled)
     
     st.write("Predicted Sale Price in", future_year, ":", y_pred_future)
