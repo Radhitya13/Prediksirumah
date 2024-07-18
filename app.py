@@ -33,7 +33,7 @@ selected_year = st.selectbox("Select a year", df['YearBuilt'].unique())
 
 filtered_df = df[df['YearBuilt'] == selected_year]
     
-        st.write(filtered_df.head())
+st.write(filtered_df.head())
 
     # Fill missing values
     bsmt_num_cols = ['BsmtFin SF 1', 'BsmtFin SF 2', 'Bsmt Unf SF','Total Bsmt SF' ,'Bsmt Full Bath', 'Bsmt Half Bath']
