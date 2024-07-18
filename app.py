@@ -32,6 +32,11 @@ def main():
     future_year = st.slider("Select a future year", min_value=df['Year Built'].min(), max_value=df['Year Built'].max() + 10)
 
     filtered_df = df[df['Year Built'] == future_year]
+
+    X_future = future_data.drop(['SalePrice'], axis=1)
+
+    X_future_scaled = scaler.transform(X_future)  # Pastikan untuk menggunakan scaler yang sama yang digunakan untuk training
+    y_pred_future = model.predict(X_future_scaled)
     
     st.write(filtered_df.head())
 
