@@ -11,6 +11,11 @@ df = pd.read_csv('data/CarPrice_Assignmnet.csv')
 
 # Preprocess data
 df = preprocess_data(df)
+df = df.fillna(df.mean())
+
+df = pd.get_dummies(df, drop_first=True)
+
+return df
 
 # Split data
 X = df.drop('price', axis=1)
