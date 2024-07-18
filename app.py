@@ -23,6 +23,9 @@ def missing_percent(df):
 # Main function to run the app
 def main():
     st.title("Ames Housing Price Prediction")
+
+    scaler = StandardScaler()
+    model = LinearRegression()
     
     df = load_data()
     
