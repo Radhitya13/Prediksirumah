@@ -29,9 +29,9 @@ def main():
     st.header("Dataset Overview")
     st.write(df.head())
     
-    selected_year = st.selectbox("Select a year", df['YearBuilt'].unique())
+    selected_year = st.selectbox("Select a year", df['Year Built'].unique())
 
-    filtered_df = df[df['YearBuilt'] == selected_year]
+    filtered_df = df[df['Year Built'] == selected_year]
     
     st.write(filtered_df.head())
 
