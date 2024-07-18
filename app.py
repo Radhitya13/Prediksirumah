@@ -135,4 +135,4 @@ def main():
     st.write(elastic_model.coef_)
 
 if __name__ == '__main__':
-main()
+    main()
