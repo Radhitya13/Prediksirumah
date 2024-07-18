@@ -29,7 +29,7 @@ def main():
     st.header("Dataset Overview")
     st.write(df.head())
     
-  selected_year = st.selectbox("Select a year", df['YearBuilt'].unique())
+selected_year = st.selectbox("Select a year", df['YearBuilt'].unique())
 
 filtered_df = df[df['YearBuilt'] == selected_year]
     
