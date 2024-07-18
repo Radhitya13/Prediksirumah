@@ -6,7 +6,6 @@ import seaborn as sns
 from sklearn.linear_model import LinearRegression, Ridge, LassoCV, ElasticNetCV, RidgeCV
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from sklearn.exceptions import NotFittedError
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 
 # Load dataset
